@@ -12,6 +12,11 @@ class DashboardController extends Controller
         $totalCategories = Category::count();
         $totalProducts = Product::count();
         $totalStock = Product::sum('quantity');
+        $lowStockProducts = Product::where('quantity', '<=', 5)
+        ->where('quantity', '>',0)
+        ->orderBy('quantity')
+        ->take(5)   
+        ->get();
 
         $products = Product::all();
 
@@ -24,6 +29,11 @@ class DashboardController extends Controller
         }
 
         $expectedProfit = $inventoryValue - $inventoryCost;
+        $productsByCategory = Category::withCount('products')->get();
+        $recentProducts = Product::with('category')
+            ->latest()
+            ->take(5)
+            ->get();
 
         return view('dashboard', compact(
             'totalCategories',
@@ -31,7 +41,10 @@ class DashboardController extends Controller
             'totalStock',
             'inventoryCost',
             'inventoryValue',
-            'expectedProfit'
+            'expectedProfit',
+            'lowStockProducts',
+            'productsByCategory',
+            'recentProducts'
         ));
     }
 }

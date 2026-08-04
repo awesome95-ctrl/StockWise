@@ -7,9 +7,10 @@
 
     <div class="py-12">
         <div class="max-w-3xl mx-auto bg-white shadow rounded-lg p-6">
-            <form method="POST" action="{{route('products.update', $product->id) }}">
+            <form method="POST" action="{{route('products.update', $product->id) }}" enctype="multipart/form-data">
                 @csrf
                 @method ('PUT')
+                <input type="file" name="image">
                 
                 <div class="mb-4">
                     <label class="block font-medium">Category</label>

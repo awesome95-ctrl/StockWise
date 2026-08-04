@@ -7,8 +7,10 @@
 
     <div class="py-12">
         <div class="max-w-3xl mx-auto bg-white shadow rounded-lg p-6">
-            <form method="POST" action="{{route('products.store')}}">
+            <form method="POST" action="{{route('products.store')}}" enctype="multipart/form-data">
+
                 @csrf
+                <input type="file" name="image">
                 
                 <select name="category_id" class="border rounded w-full p-2">
                 @foreach($categories as $category)
