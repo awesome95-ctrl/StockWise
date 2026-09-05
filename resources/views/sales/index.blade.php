@@ -26,6 +26,7 @@
                 <table class="min-w-full">
 
                     <thead>
+                        <th class="text-left p-4">Action</th>
 
                         <tr class="border-b">
 
@@ -41,6 +42,14 @@
                     <tbody>
 
                         @forelse($sales as $sale)
+                        <td class="p-4">
+                            <a href="{{ route('sales.show' , $sale) }}"
+                            class="text-blue-600 hover:text-blue-800">
+                            <i class="fa-solid fa-eye"></i>
+                            View
+                            </a>
+
+                        </td>
 
                         <tr class="border-b">
 

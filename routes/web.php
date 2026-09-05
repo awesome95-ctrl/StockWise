@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SaleController;
+use App\Http\Controllers\StockMovementController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,5 +25,14 @@ Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.
 Route::resource('sales', SaleController::class);
 
 });
+
+Route::get('/stock-movements/create', [StockMovementController::class, 'create'])
+        ->name('stock-movements.create');
+
+Route::post('/stock-movements', [StockMovementController::class, 'store'])
+        ->name('stock-movements.store');
+
+Route::get('/stock-movements', [StockMovementController::class, 'index'])
+        ->name('stock-movements.index');
 
 require __DIR__.'/auth.php';

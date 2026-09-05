@@ -9,6 +9,7 @@ class Product extends Model
 {
     protected $fillable =[
         'category_id',
+        'user_id',
         'sku',
         'name',
         'description',
@@ -26,5 +27,12 @@ class Product extends Model
 
     public function SaleItems(){
         return $this->hasMany(SaleItem::class);
+    }
+
+    public function stockMovements(){
+        return $this->hasMany(StockMovement::class);
+    }
+    public function user(){
+        return $this ->belongsTo(User::class);
     }
 }

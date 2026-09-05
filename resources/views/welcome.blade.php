@@ -52,7 +52,7 @@
 
             <div class="mt-8">
 
-                <a href="{{ route('login') }}"
+                <a href="{{ route('register') }}"
                    class="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700">
 
                     Get Started
@@ -66,7 +66,7 @@
         <div>
 
             <img src="https://images.unsplash.com/photo-1553413077-190dd305871c"
-                class="rounded-xl shadow-xl">
+                class="rounded-xl shadow-xl w-full h-80 object-cover">
 
         </div>
 

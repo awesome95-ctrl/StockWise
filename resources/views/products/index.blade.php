@@ -44,6 +44,7 @@
 
                 <div class="mt-6">
                     @if ($products->count())
+                    <div class="overflow-x-auto">
                     <table class="min-w-full border border-gray-300">
                         <thead class="bg-gray-100">
                             <tr>
@@ -103,21 +104,35 @@
                                     @endif
                                 </td>
                                 <td class="border p-3">
-                                    <a href="{{ route('products.edit', $product->id) }}" class="bg-yellow-500 text-white px-3 py-1 rounded">Edit</a>
+    <div class="flex items-center gap-2 whitespace-nowrap">
 
-                                    <form action="{{ route('products.destroy', $product->id) }}"method="POST" class="inline">
-                                        @csrf
-                                        @method('DELETE')
+        <a href="{{ route('products.edit', $product->id) }}"
+        class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded">
+            Edit
+        </a>
 
-                                        <button type="submit" class="bg-red-600 text-white px-3 py-1 rounded" onclick="return confirm('Are you sure you want to delete this product?')">Delete</button>
-                                    </form>
-                                
-                                </td>
+        <form action="{{ route('products.destroy', $product->id) }}"
+            method="POST"
+            class="inline">
+            @csrf
+            @method('DELETE')
+
+            <button
+                type="submit"
+                class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded"
+                onclick="return confirm('Are you sure you want to delete this product?')">
+                Delete
+            </button>
+        </form>
+
+    </div>
+</td>
 
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
+                    </div>
                     <div class="mt-4">
                         {{ $products->links() }}
 

@@ -1,20 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-
-
-    
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::where('user_id', auth()->id())
+            ->latest()
+            ->get();
+
         return view('categories.index', compact('categories'));
     }
 
@@ -33,23 +34,26 @@ class CategoryController extends Controller
     {
         $request->validate([
             'name' => 'required|max:255',
-            'description' =>'nullable',
+            'description' => 'nullable',
         ]);
+
         Category::create([
+            'user_id' => auth()->id(),
             'name' => $request->name,
             'description' => $request->description,
         ]);
-        return redirect()->route('categories.index')->with('success','Category created successfully.');
-        dd($request->all());
-        dd($category);
-        }
+
+        return redirect()
+            ->route('categories.index')
+            ->with('success', 'Category created successfully.');
+    }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Category $category)
     {
-        // 
+        $this->authorizeCategory($category);
     }
 
     /**
@@ -57,7 +61,9 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('categories.edit',compact('category'));
+        $this->authorizeCategory($category);
+
+        return view('categories.edit', compact('category'));
     }
 
     /**
@@ -65,17 +71,21 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
+        $this->authorizeCategory($category);
+
         $request->validate([
             'name' => 'required|max:255',
             'description' => 'nullable',
-
         ]);
+
         $category->update([
-            'name' => $request-> name,
+            'name' => $request->name,
             'description' => $request->description,
         ]);
-        return redirect()->route('categories.index')
-        ->with('success', 'Category updated successfully.');
+
+        return redirect()
+            ->route('categories.index')
+            ->with('success', 'Category updated successfully.');
     }
 
     /**
@@ -83,10 +93,23 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
+        $this->authorizeCategory($category);
+
         $category->delete();
 
-        return redirect() ->route('categories.index')
-        ->with('success', 'Category deleted successfully.');
+        return redirect()
+            ->route('categories.index')
+            ->with('success', 'Category deleted successfully.');
+    }
 
+    /**
+     * Make sure the category belongs to the logged-in user.
+     */
+    private function authorizeCategory(Category $category)
+    {
+        abort_unless(
+            $category->user_id === auth()->id(),
+            403
+        );
     }
 }

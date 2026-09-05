@@ -61,7 +61,7 @@
                     @enderror
                 </div>
 
-                <div class="mb-4">
+                {{-- <div class="mb-4">
                     <label class="block font-medium">Quantity</label>
                     <input type="text" name="quantity"
                     value="{{ old('quantity',$product->quantity ) }}"
@@ -69,7 +69,7 @@
                     @error('quantity')
                     <p class="text-red-500 text-sm">{{  $message }}</p>
                     @enderror
-                </div>
+                </div> --}}
 
                 <div class="mb-4">
                     <label class="block font-medium">Description</label>

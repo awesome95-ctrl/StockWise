@@ -16,7 +16,8 @@
     </head>
     <body class="font-sans text-gray-900 antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-            <div class="text-center">
+            <div class="hidden lg:flex">
+
                 <a href="/" <span class="text-4xl text-blue-600 font-bold">Stock</span><span class="text-green-600 font-bold">Wise</span></a>
                 <p class="text-gray-500 mt-2">Smart Inventory Management System</p>
                 
