@@ -1,59 +1,121 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# StockWise
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**StockWise** is a web-based inventory management system designed to help small businesses manage their products, stock levels, sales, restocking activities, and inventory history from one centralized platform.
 
-## About Laravel
+The system provides a clean dashboard for monitoring inventory activity and automatically generates key business metrics from the application's underlying data.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Screenshots
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Welcome Page
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+![StockWise Welcome Page](Screenshots/Welcome-page.png)
 
-## Learning Laravel
+### Login
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+![StockWise Login](Screenshots/Login.png)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Register
 
-## Laravel Sponsors
+![StockWise Register](Screenshots/Register.png)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Dashboard
 
-### Premium Partners
+![StockWise Dashboard](Screenshots/Dashboard.png)
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Stock History
 
-## Contributing
+![StockWise Stock History](Screenshots/Stock-History.png)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Key Features
 
-## Code of Conduct
+* User registration and authentication
+* Product management
+* Category management
+* Sales recording
+* Stock restocking
+* Stock movement tracking
+* Inventory history
+* Automated dashboard statistics
+* Low-stock monitoring
+* Responsive interface
+* Organized navigation for inventory operations
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Automated Dashboard
 
-## Security Vulnerabilities
+The StockWise dashboard is **data-driven and automated**, rather than using static or hard-coded figures.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Dashboard statistics are calculated from the application's actual inventory records and update as users perform operations such as:
 
-## License
+* Adding products
+* Recording sales
+* Restocking inventory
+* Updating stock quantities
+* Creating stock movements
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This allows the dashboard to provide an up-to-date overview of the current state of the inventory.
+
+## Stock History
+
+StockWise maintains a record of inventory movements, making it possible to track changes to stock over time.
+
+The stock history helps users understand when inventory was added, removed, or otherwise changed.
+
+
+
+## Technology Stack
+
+* **Backend:** Laravel / PHP
+* **Frontend:** Blade, HTML, CSS, JavaScript
+* **Database:** MySQL
+* **UI:** Tailwind CSS
+* **Charts:** Chart.js
+* **Development Environment:** XAMPP / VS Code
+
+## What This Project Demonstrates
+
+StockWise demonstrates practical experience with:
+
+* MVC architecture
+* Database design and relationships
+* CRUD operations
+* Authentication and authorization
+* Form validation
+* Dynamic data processing
+* Inventory and transaction management
+* Database-driven dashboards
+* Responsive UI development
+* Laravel application development
+
+## Project Purpose
+
+StockWise was built to explore how software can solve everyday inventory management problems for small businesses that may still rely on manual stock records.
+
+The goal is to provide a simple digital alternative for tracking products, sales, stock levels, and inventory activity.
+
+## Future Improvements
+
+Potential future improvements include:
+
+* Barcode scanning
+* Multiple business accounts
+* Staff roles and permissions
+* Sales reports
+* Exportable inventory reports
+* Automated notifications for low-stock products
+* Cloud-based deployment and subscription management
+
+## Project Status
+
+StockWise is a functional inventory management system developed independently as part of my software engineering portfolio.
+
+## Usage & Attribution
+
+This repository is presented as a portfolio project. Please do not copy or present the project or its work as your own.
+
+For reuse or redistribution, please contact the project author.
+
+## Author
+
+**Fortune Charles**
+
+Software Engineering Student & Backend Developer
